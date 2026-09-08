@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#980b12">
+  <meta name="description" content="東寧里里長林育如服務紀實：道路改善、風災應變、環境維護與社區連結。">
+  <title>東寧里服務紀實｜林育如里長</title>
+  <style>
+    :root {
+      --cream: #fff9ec;
+      --paper: #fffdf7;
+      --ink: #3d2c24;
+      --muted: #715f54;
+      --red: #980b12;
+      --red-dark: #73070c;
+      --orange: #ef7d00;
+      --green: #08783d;
+      --gold: #f3b62f;
+      --line: #ead9bb;
+      --shadow: 0 18px 50px rgba(96, 47, 13, .10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    p, h1, h2, h3 { margin-top: 0; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .shell { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+
+    .hero { position: relative; overflow: hidden; min-height: 680px; border-bottom: 8px solid var(--gold); background: radial-gradient(circle at 12% 20%, rgba(243, 182, 47, .18), transparent 24%), radial-gradient(circle at 87% 22%, rgba(8, 120, 61, .08), transparent 20%), var(--paper); }
+    .hero::before { content: ""; position: absolute; inset: 18px; border: 3px solid var(--gold); border-radius: 30px; pointer-events: none; }
+    .hero-grid { position: relative; z-index: 1; min-height: 680px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 30px; padding: 72px 28px 34px; }
+    .hero-copy { padding-left: 18px; }
+    .kicker { display: inline-block; margin-bottom: 18px; padding: 7px 18px 8px; border-radius: 999px; color: #fff; background: var(--red); font-weight: 900; letter-spacing: .18em; box-shadow: 4px 5px 0 rgba(243, 182, 47, .35); }
+    h1 { margin-bottom: 12px; color: var(--red); font-size: clamp(70px, 10vw, 128px); line-height: .95; letter-spacing: -.05em; font-weight: 950; text-shadow: 4px 4px 0 #fff, 7px 7px 0 rgba(243, 182, 47, .45); }
+    .appeal { margin: 0 0 22px; color: var(--red-dark); font-size: clamp(22px, 3vw, 34px); font-weight: 900; letter-spacing: .08em; }
+    .brush { position: relative; display: table; margin: 9px 0; padding: 7px 26px 8px 20px; color: #fff; font-size: clamp(19px, 2.7vw, 29px); line-height: 1.25; font-weight: 900; transform: rotate(-1deg); isolation: isolate; }
+    .brush::before { content: ""; position: absolute; z-index: -1; inset: 0 -16px 0 -8px; background: var(--orange); clip-path: polygon(2% 9%, 100% 0, 96% 86%, 4% 100%, 0 62%); }
+    .brush.green { margin-left: 42px; transform: rotate(.6deg); }
+    .brush.green::before { background: var(--green); }
+    .brush mark { color: #ffe16b; background: none; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 12px 20px; border: 2px solid var(--red); border-radius: 999px; text-decoration: none; font-weight: 900; }
+    .button.primary { color: #fff; background: var(--red); }
+    .button.secondary { color: var(--red); background: rgba(255,255,255,.76); }
+
+    .portrait-wrap { position: relative; align-self: end; height: 590px; display: flex; align-items: end; justify-content: center; }
+    .portrait { position: relative; z-index: 1; height: min(570px, 78vw); width: auto; object-fit: contain; }
+    .heart { position: absolute; z-index: 2; top: 74px; right: 1%; color: #ef3340; font-size: 62px; line-height: 1; transform: rotate(12deg); }
+
+    .quick-nav { position: sticky; top: 0; z-index: 10; background: rgba(255, 249, 236, .94); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+    .quick-nav .shell { display: flex; gap: 7px; overflow-x: auto; padding-block: 11px; scrollbar-width: none; }
+    .quick-nav .shell::-webkit-scrollbar { display: none; }
+    .quick-nav a { flex: none; padding: 7px 14px; border-radius: 999px; color: var(--red-dark); text-decoration: none; font-size: 14px; font-weight: 800; }
+    .quick-nav a:hover { background: #fff; }
+
+    main { padding: 68px 0 18px; }
+    .intro { display: grid; grid-template-columns: .72fr 1.28fr; gap: 48px; align-items: start; margin-bottom: 54px; }
+    .section-label { display: inline-flex; align-items: center; gap: 10px; color: var(--green); font-size: 13px; font-weight: 900; letter-spacing: .18em; }
+    .section-label::before { content: ""; width: 34px; height: 5px; background: var(--orange); }
+    h2 { margin: 9px 0 0; color: var(--red-dark); font-size: clamp(34px, 5vw, 56px); line-height: 1.15; letter-spacing: -.035em; }
+    .intro p { margin: 0; color: var(--muted); font-size: clamp(18px, 2vw, 23px); line-height: 1.9; }
+    .intro strong { color: var(--ink); }
+
+    .team-proof { margin-bottom: 28px; padding: 28px 30px; border-radius: 26px; color: #fff; background: var(--green); box-shadow: 8px 9px 0 var(--gold); }
+    .team-proof h3 { margin-bottom: 20px; color: #fff; font-size: clamp(22px, 3vw, 30px); line-height: 1.4; }
+    .team-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: 0; padding: 0; list-style: none; }
+    .team-step { position: relative; }
+    .team-step:not(:last-child)::after { content: "→"; position: absolute; top: 1px; right: -21px; color: #ffe16b; font-size: 22px; font-weight: 900; }
+    .team-step b { display: block; margin-bottom: 5px; color: #ffe16b; font-size: 17px; }
+    .team-step span { color: rgba(255,255,255,.9); font-size: 14px; line-height: 1.65; }
+
+    .record-list { display: grid; gap: 16px; margin-top: 30px; }
+    .record-category { overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: rgba(255,255,255,.82); box-shadow: var(--shadow); scroll-margin-top: 72px; }
+    .record-category summary { display: grid; grid-template-columns: 92px 1fr 48px; gap: 22px; align-items: center; min-height: 144px; padding: 25px 30px; cursor: pointer; list-style: none; }
+    .record-category summary::-webkit-details-marker { display: none; }
+    .record-category summary:hover { background: rgba(255,255,255,.6); }
+    .category-label { display: flex; align-items: center; justify-content: center; align-self: stretch; padding: 10px; border-radius: 18px; color: #fff; background: var(--orange); font-size: 16px; font-weight: 950; line-height: 1.3; text-align: center; }
+    .record-category:nth-child(even) .category-label { background: var(--green); }
+    .category-copy h3 { margin: 0 0 5px; color: var(--red-dark); font-size: clamp(23px, 3vw, 30px); line-height: 1.35; }
+    .category-copy p { margin: 0; color: var(--muted); }
+    .open-mark { display: grid; width: 42px; height: 42px; place-items: center; border: 2px solid var(--red); border-radius: 50%; color: var(--red); font-size: 26px; font-weight: 500; line-height: 1; transition: transform .2s ease, color .2s ease, background .2s ease; }
+    .record-category[open] .open-mark { color: #fff; background: var(--red); transform: rotate(45deg); }
+    .record-category[open] summary { border-bottom: 1px solid var(--line); }
+    .record-body { padding: 28px 30px 32px; }
+    .photo-slot { display: grid; min-height: 190px; place-items: center; margin-bottom: 22px; border: 2px dashed #d8c6a7; border-radius: 20px; color: #9a856f; background: linear-gradient(135deg, #fffaf0, #f7edda); text-align: center; }
+    .photo-slot b { display: block; color: var(--red-dark); font-size: 17px; }
+    .photo-slot span { font-size: 13px; }
+    .entry-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .entry { padding: 21px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .entry time, .entry .entry-time { display: inline-block; margin-bottom: 8px; color: var(--green); font-size: 13px; font-weight: 900; letter-spacing: .05em; }
+    .entry h4 { margin: 0 0 8px; color: var(--red-dark); font-size: 19px; line-height: 1.4; }
+    .entry p { margin: 0; color: var(--muted); font-size: 14.5px; }
+    .entry strong { color: var(--ink); }
+    .mini-timeline { margin: 4px 0 0; padding: 0; list-style: none; }
+    .mini-timeline li { display: grid; grid-template-columns: 76px 1fr; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14.5px; }
+    .mini-timeline li:last-child { border-bottom: 0; }
+    .mini-timeline time, .mini-timeline b { color: var(--red-dark); font-weight: 900; }
+
+    .contact { margin-top: 82px; padding: 42px 20px; text-align: center; border-top: 3px solid var(--orange); border-bottom: 3px solid var(--green); }
+    .contact h2 { font-size: clamp(31px, 5vw, 48px); }
+    .contact p { color: var(--muted); }
+    .phone { display: inline-block; margin-top: 4px; color: var(--red); font-size: clamp(27px, 5vw, 42px); line-height: 1.2; font-weight: 950; text-decoration: none; letter-spacing: .02em; }
+    footer { padding: 30px 20px 44px; color: #8b796d; text-align: center; font-size: 13px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, 600px); }
+      .hero { min-height: auto; }
+      .hero::before { inset: 10px; border-width: 2px; border-radius: 22px; }
+      .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 8px; padding: 50px 24px 0; }
+      .hero-copy { padding-left: 0; text-align: center; }
+      .kicker { margin-bottom: 15px; font-size: 13px; }
+      h1 { font-size: clamp(72px, 24vw, 108px); }
+      .appeal { font-size: 21px; }
+      .brush { margin-inline: auto; font-size: clamp(18px, 5vw, 23px); }
+      .brush.green { margin-left: auto; }
+      .hero-actions { justify-content: center; }
+      .portrait-wrap { height: 405px; margin-top: 4px; }
+      .portrait { height: 400px; }
+      .heart { top: 46px; right: 5%; font-size: 46px; }
+      main { padding-top: 52px; }
+      .intro { grid-template-columns: 1fr; gap: 20px; }
+      .intro { margin-bottom: 36px; }
+      .intro p { font-size: 17px; }
+      .team-proof { padding: 25px 23px; box-shadow: 6px 7px 0 var(--gold); }
+      .team-flow { grid-template-columns: 1fr; gap: 17px; }
+      .team-step { padding-left: 18px; border-left: 3px solid rgba(255,255,255,.35); }
+      .team-step:not(:last-child)::after { display: none; }
+      .record-category summary { grid-template-columns: 72px 1fr 38px; gap: 14px; min-height: 126px; padding: 18px 17px; }
+      .category-label { padding: 8px; border-radius: 15px; font-size: 14px; }
+      .category-copy p { font-size: 14px; line-height: 1.6; }
+      .open-mark { width: 36px; height: 36px; font-size: 23px; }
+      .record-body { padding: 20px 17px 23px; }
+      .photo-slot { min-height: 150px; }
+      .entry-grid { grid-template-columns: 1fr; }
+      .contact { margin-top: 64px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-grid shell">
+      <div class="hero-copy">
+        <span class="kicker">東寧里里長</span>
+        <h1>林育如</h1>
+        <p class="appeal">一人當選・團隊服務</p>
+        <div class="brush">東寧大小事，收到就處理</div>
+        <div class="brush green">通報、協調、<mark>追到有結果</mark></div>
+        <div class="hero-actions">
+          <a class="button primary" href="tel:0927909979">☎ 服務專線 0927-909-979</a>
+          <a class="button secondary" href="#record">看服務紀實 ↓</a>
+        </div>
+      </div>
+      <div class="portrait-wrap" aria-hidden="true">
+        <span class="heart">♥</span>
+        <img class="portrait" src="./林育如_競選標準形象照.png" alt="">
+      </div>
+    </div>
+  </header>
+
+  <nav class="quick-nav" aria-label="服務分類">
+    <div class="shell">
+      <a href="#team">團隊服務</a>
+      <a href="#daily">日常關懷</a>
+      <a href="#environment">環境維護</a>
+      <a href="#roads">公共建設</a>
+      <a href="#storm">災害應變</a>
+      <a href="#community">社區活動</a>
+    </div>
+  </nav>
+
+  <main id="record" class="shell">
+    <section class="intro" aria-labelledby="record-title">
+      <div>
+        <span class="section-label">服務紀實</span>
+        <h2 id="record-title">里民開口後，事情才真正開始。</h2>
+      </div>
+      <p>從道路、水溝、路燈，到停電、災損與弱勢協助，林育如里長長期擔任里民與公部門之間的窗口。</p>
+    </section>
+
+    <section class="team-proof" id="team" aria-labelledby="team-title">
+      <h3 id="team-title">「一人當選・團隊服務」不是一句口號，而是每件事情的做法。</h3>
+      <ol class="team-flow">
+        <li class="team-step"><b>里長接住問題</b><span>聽里民反映、到現場了解，確認真正需要處理的事。</span></li>
+        <li class="team-step"><b>志工一起出力</b><span>掃街、清溝、物資整備、災後復原與社區活動，都是團隊共同完成。</span></li>
+        <li class="team-step"><b>跨單位完成</b><span>協調議員、公所、市府、清潔隊、台電與民間資源，追蹤到有結果。</span></li>
+      </ol>
+    </section>
+
+    <section class="record-list" aria-label="服務紀實分類">
+      <details class="record-category" id="daily">
+        <summary>
+          <span class="category-label">日常<br>關懷</span>
+          <span class="category-copy"><h3>把照顧送到家門口</h3><p>送餐、物資與生活協助，持續關心需要照顧的里民。</p></span>
+          <span class="open-mark" aria-hidden="true">＋</span>
+        </summary>
+        <div class="record-body">
+          <div class="photo-slot"><span><b>日常關懷照片</b>後續可放送餐、訪視與物資服務紀錄</span></div>
+          <div class="entry-grid">
+            <article class="entry"><span class="entry-time">長期服務</span><h4>中低收入戶與獨居長者送餐</h4><p>由里長與服務團隊協助送餐，也在接觸過程中關心長者的生活狀況與實際需要。</p></article>
+            <article class="entry"><span class="entry-time">持續辦理</span><h4>物資與生活協助</h4><p>整備關懷物資、轉介資源，協助弱勢里民取得需要的服務與行政資訊。</p></article>
+          </div>
+        </div>
+      </details>
+
+      <details class="record-category" id="environment">
+        <summary>
+          <span class="category-label">環境<br>維護</span>
+          <span class="category-copy"><h3>志工團隊一起整理生活環境</h3><p>掃街、清溝、消毒與病媒蚊防治，都是固定投入的日常工作。</p></span>
+          <span class="open-mark" aria-hidden="true">＋</span>
+        </summary>
+        <div class="record-body">
+          <div class="photo-slot"><span><b>環境維護照片</b>後續可放集合、作業中與完成後照片</span></div>
+          <div class="entry-grid">
+            <article class="entry"><span class="entry-time">固定清潔日</span><h4>清晨掃街與環境整理</h4><p>志工團隊常在清晨集合，分工整理街道、路邊雜草與公共空間。</p></article>
+            <article class="entry"><span class="entry-time">防疫工作</span><h4>消毒、清溝與登革熱防治</h4><p>配合環境清消、清除積水與水溝整理，降低病媒蚊孳生風險。</p></article>
+          </div>
+        </div>
+      </details>
+
+      <details class="record-category" id="roads">
+        <summary>
+          <span class="category-label">公共<br>建設</span>
+          <span class="category-copy"><h3>從里民通報追到改善完成</h3><p>道路、路燈、水溝與監視器，逐案會勘、協調並追蹤進度。</p></span>
+          <span class="open-mark" aria-hidden="true">＋</span>
+        </summary>
+        <div class="record-body">
+          <div class="photo-slot"><span><b>公共建設照片</b>後續可放施工前、施工中、完成後對照</span></div>
+          <div class="entry-grid">
+            <article class="entry"><span class="entry-time">道路改善</span><h4>多處路面完成重鋪或修補</h4><p>文化路、民權街、文化路111巷、東寧78號前、佳東路393巷等路段均留下改善紀錄。</p></article>
+            <article class="entry"><span class="entry-time">公共安全</span><h4>路燈、水溝與監視設備</h4><p>持續處理路燈故障、水溝堵塞，並協調設置<strong>兩處、共四支監視器</strong>。</p></article>
+          </div>
+        </div>
+      </details>
+
+      <details class="record-category" id="storm">
+        <summary>
+          <span class="category-label">災害<br>應變</span>
+          <span class="category-copy"><h3>災害發生時，資訊與協助都要跟上</h3><p>追蹤復電、協調清運、說明補助，也媒合資源協助住戶修繕。</p></span>
+          <span class="open-mark" aria-hidden="true">＋</span>
+        </summary>
+        <div class="record-body">
+          <div class="photo-slot"><span><b>災害應變照片</b>後續可放災損、搶修、清運與修繕紀錄</span></div>
+          <div class="entry-grid">
+            <article class="entry"><span class="entry-time">丹娜絲風災</span><h4>停電與災後生活協助</h4><p>聯絡台電與區公所追蹤搶修，並整理垃圾清運、停班停課與災害慰助資訊。</p></article>
+            <article class="entry"><span class="entry-time">屋頂修繕紀實</span><h4>媒合資源，追到真正完工</h4><ol class="mini-timeline"><li><b>風災後</b><span>掌握住戶屋頂受損情形</span></li><li><b>09／08</b><span>修繕正式開工</span></li><li><b>09／24</b><span>屋頂修繕全部完成</span></li></ol></article>
+          </div>
+        </div>
+      </details>
+
+      <details class="record-category" id="community">
+        <summary>
+          <span class="category-label">社區<br>活動</span>
+          <span class="category-copy"><h3>節慶一起做，每季一起走出去</h3><p>用節慶共作延續人情味，也固定安排里內旅遊增加居民交流。</p></span>
+          <span class="open-mark" aria-hidden="true">＋</span>
+        </summary>
+        <div class="record-body">
+          <div class="photo-slot"><span><b>社區活動照片</b>後續可依節慶與每季旅遊建立相簿</span></div>
+          <div class="entry-grid">
+            <article class="entry"><span class="entry-time">九九重陽</span><h4>團隊製作菜粿</h4><p>由志工分工備料、製作與整理，透過節慶共作維持社區連結。</p></article>
+            <article class="entry"><span class="entry-time">端午節</span><h4>一起包粽子</h4><p>從備料到包製都由團隊共同完成，延續地方節慶與互助文化。</p></article>
+            <article class="entry"><span class="entry-time">2026 中秋規劃</span><h4>今年一起做肉圓</h4><p>中秋活動預計由服務團隊與里民一起製作肉圓，詳細記事後續補入。</p></article>
+            <article class="entry"><span class="entry-time">每季一次</span><h4>里內旅遊</h4><p>每季安排一次居民旅遊，讓長輩與平時較少外出的里民也能參與交流。</p></article>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <span class="section-label">東寧里大小事</span>
+      <h2 id="contact-title">有需要，就找育如。</h2>
+      <p>路燈、水溝、道路或生活上的困難，都歡迎來電反映。</p>
+      <a class="phone" href="tel:0927909979">☎ 0927-909-979</a>
+    </section>
+  </main>
+
+  <footer>
+    東寧里里長 林育如服務團隊<br>
+    內容依 2024 年 11 月至 2026 年 9 月 LINE 服務群可核對紀錄整理；公共工程由里長協調議員、公所、市府及相關單位共同推動。
+  </footer>
+</body>
+</html>
