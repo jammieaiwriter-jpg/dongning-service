@@ -102,7 +102,7 @@
     .record-category[open] summary { border-bottom: 1px solid var(--line); }
     .record-body { padding: 28px 30px 32px; }
     .photo-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 128px; gap: 10px; margin-bottom: 24px; }
-    .photo-card { position: relative; overflow: hidden; grid-column: span 4; border-radius: 18px; background: #ead9bb; }
+    .photo-card { position: relative; overflow: hidden; grid-column: span 4; margin: 0; border-radius: 18px; background: #ead9bb; }
     .photo-card.wide { grid-column: span 8; }
     .photo-card.tall { grid-row: span 2; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -165,16 +165,19 @@
       .unseen-head { grid-template-columns: 1fr; gap: 14px; }
       .story-strip, .story-strip:nth-child(even) { grid-template-columns: 1fr; }
       .story-strip:nth-child(even) .story-collage { order: 0; }
-      .story-collage { min-height: 230px; }
+      .story-collage { display: block; min-height: 0; background: #ead9bb; }
+      .story-collage img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
+      .story-collage img:not(:first-child) { display: none; }
       .story-copy { padding: 25px 22px 28px; }
       .record-category summary { grid-template-columns: 72px 1fr 38px; gap: 14px; min-height: 126px; padding: 18px 17px; }
       .category-label { padding: 8px; border-radius: 15px; font-size: 14px; }
       .category-copy p { font-size: 14px; line-height: 1.6; }
       .open-mark { width: 36px; height: 36px; font-size: 23px; }
       .record-body { padding: 20px 17px 23px; }
-      .photo-grid { grid-auto-rows: 105px; gap: 7px; }
-      .photo-card, .photo-card.wide { grid-column: span 6; }
-      .photo-card:first-child { grid-column: span 12; }
+      .photo-grid { display: block; margin-bottom: 22px; }
+      .photo-card, .photo-card.wide, .photo-card.tall { width: 100%; margin: 0 0 16px; }
+      .photo-card img { width: 100%; height: auto; object-fit: contain; }
+      .photo-card figcaption { position: static; padding: 10px 14px 12px; color: #fff; background: var(--ink); font-size: 14px; }
       .chronicle-head { grid-template-columns: 1fr; gap: 14px; }
       .month-grid { grid-template-columns: 1fr; }
       .month { padding-left: 70px; }
