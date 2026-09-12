@@ -73,6 +73,21 @@
     .team-step b { display: block; margin-bottom: 5px; color: #ffe16b; font-size: 17px; }
     .team-step span { color: rgba(255,255,255,.9); font-size: 14px; line-height: 1.65; }
 
+    .unseen-work { margin: 62px 0 52px; scroll-margin-top: 76px; }
+    .unseen-head { display: grid; grid-template-columns: .82fr 1.18fr; gap: 40px; align-items: end; margin-bottom: 24px; }
+    .unseen-head p { margin: 0; color: var(--muted); font-size: 17px; }
+    .story-stack { display: grid; gap: 16px; }
+    .story-strip { display: grid; grid-template-columns: .78fr 1.22fr; overflow: hidden; min-height: 300px; border: 1px solid var(--line); border-radius: 26px; background: #fff; box-shadow: var(--shadow); }
+    .story-strip:nth-child(even) { grid-template-columns: 1.22fr .78fr; }
+    .story-strip:nth-child(even) .story-collage { order: 2; }
+    .story-collage { display: grid; grid-template-columns: 1.2fr .8fr; grid-template-rows: 1fr 1fr; gap: 5px; min-height: 300px; background: var(--ink); }
+    .story-collage img { width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+    .story-collage img:first-child { grid-row: 1 / 3; }
+    .story-copy { display: flex; flex-direction: column; justify-content: center; padding: 34px; }
+    .story-copy .stamp { align-self: flex-start; margin-bottom: 12px; padding: 4px 10px; border: 2px solid var(--red); color: var(--red); font-size: 12px; font-weight: 950; letter-spacing: .12em; transform: rotate(-2deg); }
+    .story-copy h3 { margin: 0 0 10px; color: var(--red-dark); font-size: clamp(24px, 3vw, 34px); line-height: 1.25; }
+    .story-copy p { margin: 0; color: var(--muted); }
+
     .record-list { display: grid; gap: 16px; margin-top: 30px; }
     .record-category { overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: rgba(255,255,255,.82); box-shadow: var(--shadow); scroll-margin-top: 72px; }
     .record-category summary { display: grid; grid-template-columns: 92px 1fr 48px; gap: 22px; align-items: center; min-height: 144px; padding: 25px 30px; cursor: pointer; list-style: none; }
@@ -86,9 +101,12 @@
     .record-category[open] .open-mark { color: #fff; background: var(--red); transform: rotate(45deg); }
     .record-category[open] summary { border-bottom: 1px solid var(--line); }
     .record-body { padding: 28px 30px 32px; }
-    .photo-slot { display: grid; min-height: 190px; place-items: center; margin-bottom: 22px; border: 2px dashed #d8c6a7; border-radius: 20px; color: #9a856f; background: linear-gradient(135deg, #fffaf0, #f7edda); text-align: center; }
-    .photo-slot b { display: block; color: var(--red-dark); font-size: 17px; }
-    .photo-slot span { font-size: 13px; }
+    .photo-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 128px; gap: 10px; margin-bottom: 24px; }
+    .photo-card { position: relative; overflow: hidden; grid-column: span 4; border-radius: 18px; background: #ead9bb; }
+    .photo-card.wide { grid-column: span 8; }
+    .photo-card.tall { grid-row: span 2; }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-card figcaption { position: absolute; inset: auto 0 0; padding: 32px 12px 10px; color: #fff; background: linear-gradient(transparent, rgba(28, 17, 11, .82)); font-size: 12px; font-weight: 800; line-height: 1.35; }
     .entry-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .entry { padding: 21px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
     .entry time, .entry .entry-time { display: inline-block; margin-bottom: 8px; color: var(--green); font-size: 13px; font-weight: 900; letter-spacing: .05em; }
@@ -99,6 +117,20 @@
     .mini-timeline li { display: grid; grid-template-columns: 76px 1fr; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14.5px; }
     .mini-timeline li:last-child { border-bottom: 0; }
     .mini-timeline time, .mini-timeline b { color: var(--red-dark); font-weight: 900; }
+
+    .chronicle { margin-top: 74px; scroll-margin-top: 76px; }
+    .chronicle-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 38px; align-items: end; margin-bottom: 28px; }
+    .chronicle-head p { margin: 0; color: var(--muted); }
+    .year-block { margin-top: 34px; }
+    .year-title { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 3px solid var(--gold); }
+    .year-title h3 { margin: 0; color: var(--red-dark); font-size: 34px; line-height: 1; }
+    .year-title span { color: var(--muted); font-size: 13px; }
+    .month-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .month { position: relative; padding: 20px 20px 20px 76px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.78); }
+    .month time { position: absolute; top: 19px; left: 18px; display: grid; width: 42px; height: 42px; place-items: center; border-radius: 13px; color: #fff; background: var(--green); font-size: 18px; font-weight: 950; }
+    .month h4 { margin: 0 0 5px; color: var(--red-dark); font-size: 17px; line-height: 1.4; }
+    .month p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.65; }
+    .date-note { margin-top: 18px; padding: 13px 16px; border-left: 4px solid var(--orange); border-radius: 8px; color: var(--muted); background: #fff4df; font-size: 13px; }
 
     .contact { margin-top: 82px; padding: 42px 20px; text-align: center; border-top: 3px solid var(--orange); border-bottom: 3px solid var(--green); }
     .contact h2 { font-size: clamp(31px, 5vw, 48px); }
@@ -129,12 +161,23 @@
       .team-flow { grid-template-columns: 1fr; gap: 17px; }
       .team-step { padding-left: 18px; border-left: 3px solid rgba(255,255,255,.35); }
       .team-step:not(:last-child)::after { display: none; }
+      .unseen-work { margin-top: 48px; }
+      .unseen-head { grid-template-columns: 1fr; gap: 14px; }
+      .story-strip, .story-strip:nth-child(even) { grid-template-columns: 1fr; }
+      .story-strip:nth-child(even) .story-collage { order: 0; }
+      .story-collage { min-height: 230px; }
+      .story-copy { padding: 25px 22px 28px; }
       .record-category summary { grid-template-columns: 72px 1fr 38px; gap: 14px; min-height: 126px; padding: 18px 17px; }
       .category-label { padding: 8px; border-radius: 15px; font-size: 14px; }
       .category-copy p { font-size: 14px; line-height: 1.6; }
       .open-mark { width: 36px; height: 36px; font-size: 23px; }
       .record-body { padding: 20px 17px 23px; }
-      .photo-slot { min-height: 150px; }
+      .photo-grid { grid-auto-rows: 105px; gap: 7px; }
+      .photo-card, .photo-card.wide { grid-column: span 6; }
+      .photo-card:first-child { grid-column: span 12; }
+      .chronicle-head { grid-template-columns: 1fr; gap: 14px; }
+      .month-grid { grid-template-columns: 1fr; }
+      .month { padding-left: 70px; }
       .entry-grid { grid-template-columns: 1fr; }
       .contact { margin-top: 64px; }
     }
@@ -158,7 +201,7 @@
       </div>
       <div class="portrait-wrap" aria-hidden="true">
         <span class="heart">♥</span>
-        <img class="portrait" src="./林育如_競選標準形象照.png" alt="">
+        <img class="portrait" src="林育如_競選標準形象照.png" alt="">
       </div>
     </div>
   </header>
@@ -166,11 +209,13 @@
   <nav class="quick-nav" aria-label="服務分類">
     <div class="shell">
       <a href="#team">團隊服務</a>
+      <a href="#unseen">服務現場</a>
       <a href="#daily">日常關懷</a>
       <a href="#environment">環境維護</a>
       <a href="#roads">公共建設</a>
       <a href="#storm">災害應變</a>
       <a href="#community">社區活動</a>
+      <a href="#timeline">活動年表</a>
     </div>
   </nav>
 
@@ -192,6 +237,47 @@
       </ol>
     </section>
 
+    <section class="unseen-work" id="unseen" aria-labelledby="unseen-title">
+      <div class="unseen-head">
+        <div><span class="section-label">服務現場</span><h2 id="unseen-title">看不到的角落，也一直有人在做。</h2></div>
+        <p>不是每位里民都會參加旅遊，也不一定看得到清晨掃街、會勘或災後清運。這些照片把平常不容易遇見的服務現場留下來。</p>
+      </div>
+      <div class="story-stack">
+        <article class="story-strip">
+          <div class="story-collage">
+            <img src="活動照片/雲端_2026-07_清潔日.jpg" alt="志工清掃里內巷道" loading="lazy">
+            <img src="活動照片/待確認_環境清潔日_02.jpg" alt="環保志工整理街道" loading="lazy">
+            <img src="活動照片/雲端_2025-11_清潔日_01.jpg" alt="志工進行環境清潔" loading="lazy">
+          </div>
+          <div class="story-copy"><span class="stamp">清晨開始</span><h3>掃街的是志工，背後是一次次集合與分工</h3><p>固定清潔日從集合、分區到收尾，都要有人通知、準備工具並協調清運。里民醒來時，許多工作已經完成。</p></div>
+        </article>
+        <article class="story-strip">
+          <div class="story-collage">
+            <img src="活動照片/待確認_副市長現場會勘_01.jpg" alt="里長陪同市府人員現場會勘" loading="lazy">
+            <img src="活動照片/待確認_路口會勘_警方_01.jpg" alt="與警方進行路口會勘" loading="lazy">
+            <img src="活動照片/雲端_2026-08_道路工程.jpg" alt="道路改善工程施工" loading="lazy">
+          </div>
+          <div class="story-copy"><span class="stamp">通報之後</span><h3>一張改善照片之前，是多次會勘、協調與追進度</h3><p>道路、水溝與路口問題不會通報一次就結束。到現場確認、找對單位、爭取經費，再一路追到施工完成。</p></div>
+        </article>
+        <article class="story-strip">
+          <div class="story-collage">
+            <img src="活動照片/20250707_丹娜絲颱風災情_01.jpg" alt="丹娜絲颱風造成的災損" loading="lazy">
+            <img src="活動照片/雲端_2025-08_石綿瓦清運_02.jpg" alt="風災後石綿瓦清運" loading="lazy">
+            <img src="活動照片/公開版_202509_獅子會屋頂重建_03.png" alt="協助受災戶屋頂重建（受助者已遮臉）" loading="lazy">
+          </div>
+          <div class="story-copy"><span class="stamp">災後接力</span><h3>災情通報不是終點，清運、補助、修繕都要接上</h3><p>從停電、道路中斷到石綿瓦清運與受災戶屋頂重建，每一段都要重新找資源、對接單位、確認結果。</p></div>
+        </article>
+        <article class="story-strip">
+          <div class="story-collage">
+            <img src="活動照片/雲端_2025-06_杉林溪.jpg" alt="杉林溪里民旅遊團體合照" loading="lazy">
+            <img src="活動照片/待確認_端午包粽_02.jpg" alt="志工一起包粽" loading="lazy">
+            <img src="活動照片/待確認_做菜粿_03.jpg" alt="志工製作菜粿" loading="lazy">
+          </div>
+          <div class="story-copy"><span class="stamp">把人聚起來</span><h3>活動不只服務參加的人，也讓社區關係繼續連在一起</h3><p>旅遊或節慶活動可能只有部分里民參與，但背後的報名、聯絡、備料與帶隊，同樣是長期經營社區的一部分。</p></div>
+        </article>
+      </div>
+    </section>
+
     <section class="record-list" aria-label="服務紀實分類">
       <details class="record-category" id="daily">
         <summary>
@@ -200,7 +286,15 @@
           <span class="open-mark" aria-hidden="true">＋</span>
         </summary>
         <div class="record-body">
-          <div class="photo-slot"><span><b>日常關懷照片</b>後續可放送餐、訪視與物資服務紀錄</span></div>
+          <div class="photo-grid" aria-label="日常關懷照片">
+            <figure class="photo-card wide tall"><img src="活動照片/公開版_20251227_關懷送白米_03.png" alt="里長與志工到府關懷並致贈白米（受助者已遮臉）" loading="lazy"><figcaption>關懷送米・把心意送到家門口</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/公開版_20251227_關懷送白米_01.png" alt="關懷物資服務紀錄（受助者已遮臉）" loading="lazy"><figcaption>物資關懷</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/公開版_雲端_2026-02_新春關懷.png" alt="新春期間到里民家中關懷（受助者已遮臉）" loading="lazy"><figcaption>2026 年 2 月・新春關懷</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/公開版_20251227_關懷送白米_02.png" alt="服務團隊致贈白米關懷里民（受助者已遮臉）" loading="lazy"><figcaption>2025 年 12 月・到府送暖</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-01_冬季送暖.jpg" alt="參與佳里區寒冬送暖活動" loading="lazy"><figcaption>2025 年 1 月・寒冬送暖</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/公開版_雲端_2025-12_歲末送暖_01.png" alt="歲末關懷送暖服務（受助者已遮臉）" loading="lazy"><figcaption>2025 年 12 月・歲末關懷</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/公開版_雲端_2025-12_歲末送暖_02.png" alt="服務團隊參與歲末送暖（受助者已遮臉）" loading="lazy"><figcaption>關懷不只一次</figcaption></figure>
+          </div>
           <div class="entry-grid">
             <article class="entry"><span class="entry-time">長期服務</span><h4>中低收入戶與獨居長者送餐</h4><p>由里長與服務團隊協助送餐，也在接觸過程中關心長者的生活狀況與實際需要。</p></article>
             <article class="entry"><span class="entry-time">持續辦理</span><h4>物資與生活協助</h4><p>整備關懷物資、轉介資源，協助弱勢里民取得需要的服務與行政資訊。</p></article>
@@ -215,7 +309,19 @@
           <span class="open-mark" aria-hidden="true">＋</span>
         </summary>
         <div class="record-body">
-          <div class="photo-slot"><span><b>環境維護照片</b>後續可放集合、作業中與完成後照片</span></div>
+          <div class="photo-grid" aria-label="環境維護照片">
+            <figure class="photo-card wide tall"><img src="活動照片/待確認_環境清潔日_01.jpg" alt="東寧里環保志工整理社區環境" loading="lazy"><figcaption>固定清潔日・志工分工整理環境</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2024-12_清溝.jpg" alt="清潔隊進行水溝清淤" loading="lazy"><figcaption>2024 年 12 月・水溝清淤</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2026-07_清潔日.jpg" alt="志工清掃里內巷道" loading="lazy"><figcaption>2026 年 7 月・環境清潔</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_環境清潔日_02.jpg" alt="環保志工清掃路面" loading="lazy"><figcaption>清晨分區掃街</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_環境清潔日_03.jpg" alt="志工團隊整理公共環境" loading="lazy"><figcaption>一起動手整理</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_水溝清淤_01.jpg" alt="水溝淤積清理作業" loading="lazy"><figcaption>水溝清淤</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-02_清潔日_01.jpg" alt="里內清潔日工作紀錄" loading="lazy"><figcaption>2025 年 2 月・清潔日</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-02_清潔日_02.jpg" alt="清潔日志工工作現場" loading="lazy"><figcaption>志工協力</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-11_清潔日_01.jpg" alt="志工進行街道清潔" loading="lazy"><figcaption>2025 年 11 月・清潔日</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-11_清潔日_02.jpg" alt="志工清理里內環境" loading="lazy"><figcaption>清潔工作持續進行</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2026-05_清溝.jpg" alt="光復路水溝清理作業" loading="lazy"><figcaption>2026 年 5 月・清溝</figcaption></figure>
+          </div>
           <div class="entry-grid">
             <article class="entry"><span class="entry-time">固定清潔日</span><h4>清晨掃街與環境整理</h4><p>志工團隊常在清晨集合，分工整理街道、路邊雜草與公共空間。</p></article>
             <article class="entry"><span class="entry-time">防疫工作</span><h4>消毒、清溝與登革熱防治</h4><p>配合環境清消、清除積水與水溝整理，降低病媒蚊孳生風險。</p></article>
@@ -230,7 +336,17 @@
           <span class="open-mark" aria-hidden="true">＋</span>
         </summary>
         <div class="record-body">
-          <div class="photo-slot"><span><b>公共建設照片</b>後續可放施工前、施工中、完成後對照</span></div>
+          <div class="photo-grid" aria-label="公共建設照片">
+            <figure class="photo-card wide tall"><img src="活動照片/雲端_2026-08_道路工程.jpg" alt="道路刨除重鋪施工現場" loading="lazy"><figcaption>2026 年 8 月・佳東路 393 巷道路改善</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_道路刨除鋪設_01.jpg" alt="道路刨除與鋪設工程" loading="lazy"><figcaption>道路改善施工</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_路口會勘_警方_01.jpg" alt="里長與相關單位進行路口會勘" loading="lazy"><figcaption>跨單位現場會勘</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_道路刨除鋪設_02.jpg" alt="道路重鋪施工過程" loading="lazy"><figcaption>從刨除追到鋪設</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_副市長現場會勘_01.jpg" alt="里長陪同市府人員現場會勘" loading="lazy"><figcaption>市府現場會勘</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_吊車道路工程_01.jpg" alt="吊車進行道路相關工程" loading="lazy"><figcaption>工程現場追蹤</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_空地現場會勘_01.jpg" alt="里長與相關單位進行空地會勘" loading="lazy"><figcaption>問題到現場確認</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_水溝破損_01.jpg" alt="水溝設施破損待改善" loading="lazy"><figcaption>設施破損通報</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2024-12_地方建設觀摩.jpg" alt="參與地方建設觀摩交流" loading="lazy"><figcaption>2024 年 12 月・建設觀摩</figcaption></figure>
+          </div>
           <div class="entry-grid">
             <article class="entry"><span class="entry-time">道路改善</span><h4>多處路面完成重鋪或修補</h4><p>文化路、民權街、文化路111巷、東寧78號前、佳東路393巷等路段均留下改善紀錄。</p></article>
             <article class="entry"><span class="entry-time">公共安全</span><h4>路燈、水溝與監視設備</h4><p>持續處理路燈故障、水溝堵塞，並協調設置<strong>兩處、共四支監視器</strong>。</p></article>
@@ -245,7 +361,17 @@
           <span class="open-mark" aria-hidden="true">＋</span>
         </summary>
         <div class="record-body">
-          <div class="photo-slot"><span><b>災害應變照片</b>後續可放災損、搶修、清運與修繕紀錄</span></div>
+          <div class="photo-grid" aria-label="災害應變照片">
+            <figure class="photo-card wide tall"><img src="活動照片/20250707_丹娜絲颱風災情_01.jpg" alt="丹娜絲颱風造成東寧里災損" loading="lazy"><figcaption>2025 年 7 月・丹娜絲颱風災情</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_石綿瓦廢棄物清運_01.jpg" alt="風災後石綿瓦廢棄物清運" loading="lazy"><figcaption>2025 年 8 月・石綿瓦清運</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/公開版_202509_獅子會屋頂重建_04.png" alt="風災受災戶屋頂重建完成（受助者已遮臉）" loading="lazy"><figcaption>2025 年 9 月・受災戶屋頂重建</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_石綿瓦廢棄物清運_02.jpg" alt="協調車輛清運石綿瓦廢棄物" loading="lazy"><figcaption>清運逐戶完成</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-08_石綿瓦清運_01.jpg" alt="風災後大型車輛協助清運" loading="lazy"><figcaption>48 包、26 棟陸續清運</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-08_石綿瓦清運_02.jpg" alt="里長在清運現場協調" loading="lazy"><figcaption>現場協調清運</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/202509_獅子會屋頂重建_01.jpg" alt="受災戶屋頂重建施工" loading="lazy"><figcaption>媒合資源協助開工</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/公開版_202509_獅子會屋頂重建_02.png" alt="屋頂重建工程進度（受助者已遮臉）" loading="lazy"><figcaption>持續追蹤修繕進度</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/公開版_202509_獅子會屋頂重建_03.png" alt="屋頂重建工程現場（受助者已遮臉）" loading="lazy"><figcaption>從災損追到完工</figcaption></figure>
+          </div>
           <div class="entry-grid">
             <article class="entry"><span class="entry-time">丹娜絲風災</span><h4>停電與災後生活協助</h4><p>聯絡台電與區公所追蹤搶修，並整理垃圾清運、停班停課與災害慰助資訊。</p></article>
             <article class="entry"><span class="entry-time">屋頂修繕紀實</span><h4>媒合資源，追到真正完工</h4><ol class="mini-timeline"><li><b>風災後</b><span>掌握住戶屋頂受損情形</span></li><li><b>09／08</b><span>修繕正式開工</span></li><li><b>09／24</b><span>屋頂修繕全部完成</span></li></ol></article>
@@ -260,7 +386,23 @@
           <span class="open-mark" aria-hidden="true">＋</span>
         </summary>
         <div class="record-body">
-          <div class="photo-slot"><span><b>社區活動照片</b>後續可依節慶與每季旅遊建立相簿</span></div>
+          <div class="photo-grid" aria-label="社區活動照片">
+            <figure class="photo-card wide tall"><img src="活動照片/雲端_2025-06_杉林溪.jpg" alt="東寧里里民杉林溪一日遊合影" loading="lazy"><figcaption>2025 年 6 月・杉林溪里民旅遊</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_端午包粽_01.jpg" alt="端午節志工一起包粽" loading="lazy"><figcaption>端午共作・一起包粽</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2024-12_節慶共作.jpg" alt="志工團隊一起製作菜粿" loading="lazy"><figcaption>2024 年 12 月・冬至菜粿</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-03_里民參訪.jpg" alt="里民參訪活動團體合照" loading="lazy"><figcaption>2025 年春季・里民參訪</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-10_節慶共作.jpg" alt="志工準備社區節慶料理" loading="lazy"><figcaption>2025 年 10 月・節慶共作</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_端午包粽_02.jpg" alt="端午節志工分工包粽" loading="lazy"><figcaption>備料、包製一起完成</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-05_端午共作_01.jpg" alt="端午共作活動現場" loading="lazy"><figcaption>2025 年 5 月・端午共作</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-05_端午共作_02.jpg" alt="端午活動餐點與備料" loading="lazy"><figcaption>志工分工備料</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_做菜粿_01.jpg" alt="志工製作菜粿" loading="lazy"><figcaption>冬至菜粿・動手製作</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_做菜粿_02.jpg" alt="志工團隊準備菜粿材料" loading="lazy"><figcaption>團隊備料</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_做菜粿_03.jpg" alt="社區志工一起做菜粿" loading="lazy"><figcaption>社區共作</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/待確認_做菜粿_04.jpg" alt="完成的菜粿與工作現場" loading="lazy"><figcaption>從早忙到完成</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-06_杉林溪_02.jpg" alt="杉林溪里民旅遊活動" loading="lazy"><figcaption>旅途中彼此照應</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2025-06_杉林溪_03.jpg" alt="里民杉林溪一日遊紀錄" loading="lazy"><figcaption>讓平時少出門的里民也能參加</figcaption></figure>
+            <figure class="photo-card"><img src="活動照片/雲端_2026-03_里民參訪.jpg" alt="2026 年里民參訪合影" loading="lazy"><figcaption>2026 年 3 月・里民參訪</figcaption></figure>
+          </div>
           <div class="entry-grid">
             <article class="entry"><span class="entry-time">九九重陽</span><h4>團隊製作菜粿</h4><p>由志工分工備料、製作與整理，透過節慶共作維持社區連結。</p></article>
             <article class="entry"><span class="entry-time">端午節</span><h4>一起包粽子</h4><p>從備料到包製都由團隊共同完成，延續地方節慶與互助文化。</p></article>
@@ -269,6 +411,55 @@
           </div>
         </div>
       </details>
+    </section>
+
+    <section class="chronicle" id="timeline" aria-labelledby="timeline-title">
+      <div class="chronicle-head">
+        <div><span class="section-label">按月整理</span><h2 id="timeline-title">東寧里活動年表</h2></div>
+        <p>把 LINE 服務紀錄、本機照片與雲端相簿交叉整理，保留每個月最重要的服務與活動。部分照片是轉傳或另存，日期未必等於活動當天，因此統一以年／月呈現。</p>
+      </div>
+
+      <div class="year-block">
+        <div class="year-title"><h3>2024</h3><span>11 月起</span></div>
+        <div class="month-grid">
+          <article class="month"><time>11</time><h4>道路改善會勘</h4><p>道路會勘通過，啟動後續柏油重鋪安排。</p></article>
+          <article class="month"><time>12</time><h4>參訪、清溝與冬至共作</h4><p>辦理里民參訪；協調清潔隊清理新生路、信義一街水溝；志工完成約 2,000 個菜粿，並發放滅鼠藥。</p></article>
+        </div>
+      </div>
+
+      <div class="year-block">
+        <div class="year-title"><h3>2025</h3><span>整年度服務紀錄</span></div>
+        <div class="month-grid">
+          <article class="month"><time>01</time><h4>送暖、掃街與防身課</h4><p>參與佳里區寒冬送暖，完成全里掃街與義工聚餐，並邀請教官到里內上防身課。</p></article>
+          <article class="month"><time>02</time><h4>清潔日、道路與公共安全</h4><p>公所除草、里內掃街與道路重鋪同步進行；兩處四支監視器啟用，並辦理社區健康講座。</p></article>
+          <article class="month"><time>03</time><h4>道路改善與社區交流</h4><p>完成文化路改善工程勘查及部分路段鋪設，並參與佳里食堂等社區活動。</p></article>
+          <article class="month"><time>04</time><h4>里民參訪與研習</h4><p>辦理北部兩天一夜參訪，走訪總統府、九份與烏來；參與里鄰長研習。</p></article>
+          <article class="month"><time>05</time><h4>環境整理、會勘與端午包粽</h4><p>完成清潔日、水溝蓋修復及多處現場會勘；志工一天合力完成約 3,000 顆粽子。</p></article>
+          <article class="month"><time>06</time><h4>杉林溪里民旅遊與環境清潔</h4><p>分兩梯辦理杉林溪一日遊；四案同步派工，志工持續清掃街道及整理雜草。</p></article>
+          <article class="month"><time>07</time><h4>丹娜絲颱風應變</h4><p>第一時間通報災情、追蹤復電與清運；動員災後環境整理，並協助災損慰助與修繕補助申請。</p></article>
+          <article class="month"><time>08</time><h4>石綿瓦清運與災後復原</h4><p>東寧里 48 包、26 棟石綿瓦完成清運；持續追蹤災後路燈修復及環境整理。</p></article>
+          <article class="month"><time>09</time><h4>受災戶屋頂重建</h4><p>媒合善心人士與獅子會資源，從開工一路追到完工；另辦理里民旅遊、停車場勘查與清溝。</p></article>
+          <article class="month"><time>10</time><h4>中秋共聚與道路完工</h4><p>舉辦中秋晚會與節慶共作；民權街、文化路 111 巷完成柏油鋪設，並參與防災士培訓。</p></article>
+          <article class="month"><time>11</time><h4>清潔、防颱與路面修補</h4><p>公所支援除草、志工辦理清潔日；因應鳳凰颱風開設應變中心，完成進學路龜裂修補。</p></article>
+          <article class="month"><time>12</time><h4>里民活動、路平與歲末送暖</h4><p>辦理里民一日遊與歌仔戲活動；義民街路平完工，志工製作冬至菜粿，歲末協助送暖。</p></article>
+        </div>
+      </div>
+
+      <div class="year-block">
+        <div class="year-title"><h3>2026</h3><span>截至 9 月</span></div>
+        <div class="month-grid">
+          <article class="month"><time>01</time><h4>除草、物資整備與年節服務</h4><p>公所人力進里除草，志工協助中山公園物資裝袋，並辦理里民年節食品服務。</p></article>
+          <article class="month"><time>02</time><h4>清潔、水溝爭取與新春關懷</h4><p>辦理環境清潔，爭取延平路 350 巷水溝經費，並分享新春油飯關懷里民。</p></article>
+          <article class="month"><time>03</time><h4>民俗活動、里民旅遊與校園連結</h4><p>參與拉王船、分兩梯辦理小琉球一日遊，並投入信義國小運動會及全里消毒。</p></article>
+          <article class="month"><time>04</time><h4>道路安全、廣播設備與雨中清潔</h4><p>完成路面掏空處理及廣播器更新；志工雨中掃街，持續整理生活環境。</p></article>
+          <article class="month"><time>05</time><h4>清溝、浴佛節與霧台三地門旅遊</h4><p>清理光復路水溝，參與浴佛節，並分梯帶領里民前往霧台、三地門交流。</p></article>
+          <article class="month"><time>06</time><h4>端午包粽與環境維護</h4><p>志工團隊端午共作，清除水溝油垢並辦理環境清潔日，同步轉知防災士培訓資訊。</p></article>
+          <article class="month"><time>07</time><h4>防颱、清潔與道路施工</h4><p>因應颱風做好防颱準備，志工持續清潔里內環境，並處理延平路路面凸起。</p></article>
+          <article class="month"><time>08</time><h4>道路重鋪、塌陷通報與雨後清消</h4><p>佳東路 393 巷完成柏油重鋪；處理道路塌陷，雨後加強環境清消與病媒蚊防治。</p></article>
+          <article class="month"><time>09</time><h4>中秋試作、手作課與清潔日</h4><p>志工試作中秋肉圓，辦理玫瑰花燈創作課，並配合公所進行環境清潔。</p></article>
+        </div>
+      </div>
+      <p class="date-note">照片時間僅作月份整理參考；活動內容以 LINE 服務群與可核對文字紀錄為準。</p>
     </section>
 
     <section class="contact" aria-labelledby="contact-title">
